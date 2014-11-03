@@ -41,25 +41,19 @@ class appdev(
 	        ;
 	}
 
-
 	class { 'selinux':
 			mode => 'disabled'
 		}
-
-
-
-
-
 
 	class { '::apache': }
 	apache::vhost { "app.dev":
 		port    => '80',
 		default_vhost => true,
-		docroot => "/var/www/$app_folder/webroot",
+		docroot => "/var/www/$app_folder/public_html",
 		docroot_group => "vagrant",
 		docroot_owner => "vagrant",
 		directories => [
-			{ path => "/var/www/$app_folder/webroot", order => 'Allow,Deny', allow => 'from all', allow_override => ['All'] }
+			{ path => "/var/www/$app_folder/public_html", order => 'Allow,Deny', allow => 'from all', allow_override => ['All'] }
 		],
 		require => File["/var/www/$app_folder"]
 	}
