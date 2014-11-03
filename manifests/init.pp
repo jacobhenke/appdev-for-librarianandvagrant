@@ -52,7 +52,7 @@ class appdev(
 
 
 	class { '::apache': }
-	apache::vhost { "appdev":
+	apache::vhost { "app.dev":
 		port    => '80',
 		default_vhost => true,
 		docroot => "/var/www/$app_folder/webroot",
