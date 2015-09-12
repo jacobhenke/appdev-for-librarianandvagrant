@@ -32,7 +32,7 @@ class appdev(
 
 	yumrepo {
 	    'epel':
-	        descr       => 'Extra Packages for Enterprise Linux 6 - $basearch',
+	        descr       => 'Extra Packages for Enterprise Linux 7 - $basearch',
 	        enabled     => "1",
 	        gpgcheck    => "1",
 	        failovermethod => 'priority',
