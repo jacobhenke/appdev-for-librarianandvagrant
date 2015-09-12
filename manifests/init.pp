@@ -7,18 +7,11 @@ class appdev(
 )
 {
 	service {
-		'iptables':
+		'firewalld':
 			ensure => stopped,
 			enable => false
 			;
 	}
-	service {
-		'ip6tables':
-			ensure => stopped,
-			enable => false
-			;
-	}
-
 	package{
 		[
 			'vim-enhanced',
@@ -53,7 +46,12 @@ class appdev(
 		docroot_group => "vagrant",
 		docroot_owner => "vagrant",
 		directories => [
-			{ path => "/var/www/$app_folder/public_html", allow_override => ['All'] }
+			{
+				path => "/var/www/$app_folder/public_html",
+				allow_override => ['All'],
+				options => ['Indexes','FollowSymLinks'],
+				index_options     => ['FancyIndexing']
+			}
 		],
 		require => File["/var/www/$app_folder"]
 	}

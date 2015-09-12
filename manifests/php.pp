@@ -11,10 +11,7 @@ class appdev::php
 		file_uploads => 'On',
 		upload_max_filesize => '16M',
 		allow_url_fopen => 'On',
-		html_errors => 'On',
-		xdebug.remote_connect_back => 'On',
-		xdebug.remote_enable => 'On',
-		xdebug.remote_log => '/var/log/xdebug/xdebug.log'
+		html_errors => 'On'
 	}
 	php::module { [
 			'devel',
@@ -36,6 +33,18 @@ class appdev::php
 			'process'
 		]:
 		require => [ Class['php::cli'], Yumrepo['epel'] ]
+	}
+	php::module::ini { 'pecl-xdebug':
+		settings => {
+			'zend_extension' => '/usr/lib64/php/modules/xdebug.so',
+			'xdebug.remote_connect_back' => 'On',
+			'xdebug.remote_enable' => 'On',
+			'xdebug.remote_log' => '/var/log/xdebug/xdebug.log'
+		},
+		notify => Exec['fix xdebug.ini']
+	}
+	exec { 'fix xdebug.ini':
+		command      => "/bin/sed -i '/extension=xdebug.so/d' /etc/php.d/xdebug.ini"
 	}
 	class { '::composer':
 		command_name => 'composer',
