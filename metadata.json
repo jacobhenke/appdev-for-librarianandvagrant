@@ -1,0 +1,26 @@
+{
+  "name": "appdev-for-librarianandvagrant",
+  "version": "0.0.2",
+  "author": "Jacob Henke",
+  "license": "Apache-2.0",
+  "summary": "See https://github.com/jacobhenke/vagrant-lamp-centos",
+  "source": "https://github.com/jacobhenke/appdev-for-librarianandvagrant",
+  "project_page": "https://github.com/jacobhenke/appdev-for-librarianandvagrant",
+  "issues_url": "https://github.com/jacobhenke/appdev-for-librarianandvagrant/issues",
+  "tags": ["vagrant", "librarian-puppet"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+   ],
+  "dependencies": [
+    { "name": "puppetlabs/apache" },
+    { "name": "puppetlabs/mysql" },
+    { "name": "thias/php"},
+    { "name": "willdurand/composer"},
+    { "name": "spiette/selinux"}
+  ]
+}

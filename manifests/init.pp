@@ -36,8 +36,8 @@ class appdev(
 	        enabled     => "1",
 	        gpgcheck    => "1",
 	        failovermethod => 'priority',
-	        gpgkey      => "http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
-	        mirrorlist  => 'https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch'
+	        gpgkey      => "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7",
+	        mirrorlist  => 'https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch'
 	        ;
 	}
 
