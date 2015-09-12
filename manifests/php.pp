@@ -11,7 +11,10 @@ class appdev::php
 		file_uploads => 'On',
 		upload_max_filesize => '16M',
 		allow_url_fopen => 'On',
-		html_errors => 'On'
+		html_errors => 'On',
+		xdebug.remote_connect_back => 'On',
+		xdebug.remote_enable => 'On',
+		xdebug.remote_log => '/var/log/xdebug/xdebug.log'
 	}
 	php::module { [
 			'devel',
