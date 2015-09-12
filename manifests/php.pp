@@ -1,14 +1,5 @@
 class appdev::php
 {
-	package { [
-			"uuid-php",
-			"phpMyAdmin"
-		]:
-			ensure => present,
-			require => Yumrepo['epel']
-			;
-	}
-
 	class { "::php::cli": }
 	class { '::php::mod_php5': }
 	php::ini { '/etc/php.ini':
@@ -41,7 +32,7 @@ class appdev::php
 			'php-phpunit-PHPUnit-MockObject',
 			'process'
 		]:
-		require => [ Class['php::cli'], Yumrepo['epel'], Package['uuid-php'] ]
+		require => [ Class['php::cli'], Yumrepo['epel'] ]
 	}
 	class { '::composer':
 		command_name => 'composer',
