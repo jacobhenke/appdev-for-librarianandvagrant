@@ -2,7 +2,6 @@ class appdev::php
 {
 	package { [
 			"uuid-php",
-			"xcache-admin",
 			"phpMyAdmin"
 		]:
 			ensure => present,
@@ -14,12 +13,12 @@ class appdev::php
 	class { '::php::mod_php5': }
 	php::ini { '/etc/php.ini':
 		display_errors => 'On',
-		date_timezone => 'Asia/Singapore',
+		date_timezone => 'America/Chicago',
 		error_reporting => 'E_ALL & ~E_NOTICE & ~E_DEPRECATED',
 		short_open_tag => 'On',
 		memory_limit => '128M',
 		file_uploads => 'On',
-		upload_max_filesize => '2M',
+		upload_max_filesize => '16M',
 		allow_url_fopen => 'On',
 		html_errors => 'On'
 	}
@@ -36,11 +35,10 @@ class appdev::php
 			'xml',
 			'pecl-memcache',
 			'pecl-xdebug',
-			'xcache',
 			'pear-Net-Curl',
 			'pecl-xhprof',
-			'phpunit-PHPUnit',
-			'phpunit-PHPUnit-MockObject',
+			'php-phpunit-PHPUnit',
+			'php-phpunit-PHPUnit-MockObject',
 			'process'
 		]:
 		require => [ Class['php::cli'], Yumrepo['epel'], Package['uuid-php'] ]

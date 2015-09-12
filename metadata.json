@@ -1,6 +1,6 @@
 {
   "name": "appdev-for-librarianandvagrant",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Jacob Henke",
   "license": "Apache-2.0",
   "summary": "See https://github.com/jacobhenke/vagrant-lamp-centos",
@@ -21,6 +21,6 @@
     { "name": "puppetlabs/mysql" },
     { "name": "thias/php"},
     { "name": "willdurand/composer"},
-    { "name": "spiette/selinux"}
+    { "name": "jfryman/selinux"}
   ]
 }

@@ -53,7 +53,7 @@ class appdev(
 		docroot_group => "vagrant",
 		docroot_owner => "vagrant",
 		directories => [
-			{ path => "/var/www/$app_folder/public_html", order => 'Allow,Deny', allow => 'from all', allow_override => ['All'] }
+			{ path => "/var/www/$app_folder/public_html", allow_override => ['All'] }
 		],
 		require => File["/var/www/$app_folder"]
 	}
