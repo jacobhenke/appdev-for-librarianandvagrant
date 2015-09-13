@@ -56,6 +56,7 @@ class appdev(
 		require => File["/var/www/$app_folder"]
 	}
 	class { 'php': }
+	class { 'wp::cli': }
 	class {
 		'mysql':
 			root_pwd => $root_pwd,

@@ -19,8 +19,9 @@
   "dependencies": [
     { "name": "puppetlabs/apache" },
     { "name": "puppetlabs/mysql" },
-    { "name": "thias/php"},
-    { "name": "willdurand/composer"},
-    { "name": "jfryman/selinux"}
+    { "name": "thias/php" },
+    { "name": "willdurand/composer" },
+    { "name": "jfryman/selinux" },
+    { "name": "jacobhenke/puppet-wp" }
   ]
 }
